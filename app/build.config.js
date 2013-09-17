@@ -58,7 +58,8 @@ module.exports = {
       'vendor/ng-grid/ng-grid-2.0.7.min.js',
       'vendor/d3/d3.min.js',
       'vendor/cal-heatmap/cal-heatmap.min.js',
-      'vendor/cal-heatmap/cal-heatmap.source-map.js'
+      'vendor/cal-heatmap/cal-heatmap.source-map.js',
+      'vendor/underscore/underscore.js'
     ],
     css: [
       'vendor/ng-grid/ng-grid.min.css',

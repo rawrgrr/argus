@@ -38,18 +38,45 @@ angular.module('ArgusApp.home', [
     /**
      * And of course we define a controller for our route.
      */
-    .controller('HomeController', function HomeController($scope, titleService) {
+    .controller('HomeController', function HomeController($scope, $http, titleService) {
         titleService.setTitle('Home');
 
-        $scope.myData = [
+        $scope.allData = [
             {name: "Moroni", age: 50, status: 'BAD'},
             {name: "Tiancum", age: 43, status: 'BAD'},
             {name: "Jacob", age: 27, status: 'GOOD'},
             {name: "Nephi", age: 29, status: 'BAD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Nephi", age: 29, status: 'BAD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Nephi", age: 29, status: 'BAD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Nephi", age: 29, status: 'BAD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Nephi", age: 29, status: 'BAD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Enos", age: 34, status: 'GOOD'},
+            {name: "Nephi", age: 29, status: 'BAD'},
             {name: "Enos", age: 34, status: 'GOOD'}
         ];
 
-        $scope.gridOptions = {data: 'myData'};
+        $scope.filteredData = $scope.allData;
+
+        $scope.gridOptions = {data: 'filteredData'};
+
+        $scope.$on('HEATMAP_CLICKED', function(event, args) {
+
+            $scope.filteredData = _.reject($scope.allData, function(num) { return num.age % _.random(0, 2) === 0; });
+
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
+
+        });
 
     });
 
