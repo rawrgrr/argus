@@ -42,26 +42,30 @@ angular.module('ArgusApp.home', [
         titleService.setTitle('Home');
 
         $scope.allData = [
-            {name: "Moroni", age: 50, status: 'BAD'},
-            {name: "Tiancum", age: 43, status: 'BAD'},
-            {name: "Jacob", age: 27, status: 'GOOD'},
-            {name: "Nephi", age: 29, status: 'BAD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Nephi", age: 29, status: 'BAD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Nephi", age: 29, status: 'BAD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Nephi", age: 29, status: 'BAD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Nephi", age: 29, status: 'BAD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Enos", age: 34, status: 'GOOD'},
-            {name: "Nephi", age: 29, status: 'BAD'},
-            {name: "Enos", age: 34, status: 'GOOD'}
+            {revision: 1, author: "Roger",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 2, author: "Fabio",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_DIFF'},
+            {revision: 3, author: "Koko",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'DIFF'},
+            {revision: 4, author: "Yang",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'MERGE'},
+            {revision: 5, author: "Andy",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 1, author: "Jungmin", date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 2, author: "Roger",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 3, author: "Fabio",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_DIFF'},
+            {revision: 4, author: "Koko",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'DIFF'},
+            {revision: 5, author: "Yang",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'MERGE'},
+            {revision: 5, author: "Andy",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 4, author: "Jungmin", date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 3, author: "Roger",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 2, author: "Fabio",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_DIFF'},
+            {revision: 1, author: "Koko",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'DIFF'},
+            {revision: 5, author: "Yang",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'MERGE'},
+            {revision: 4, author: "Andy",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 3, author: "Jungmin", date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 2, author: "Roger",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 1, author: "Fabio",   date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_DIFF'},
+            {revision: 1, author: "Koko",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'DIFF'},
+            {revision: 2, author: "Yang",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'MERGE'},
+            {revision: 3, author: "Andy",    date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'},
+            {revision: 4, author: "Jungmin", date: 'DATE', time: 'SOME_TIME', diffStatus: 'NO_RB'}
         ];
 
         $scope.filteredData = $scope.allData;
@@ -70,7 +74,7 @@ angular.module('ArgusApp.home', [
 
         $scope.$on('HEATMAP_CLICKED', function(event, args) {
 
-            $scope.filteredData = _.reject($scope.allData, function(num) { return num.age % _.random(0, 2) === 0; });
+            $scope.filteredData = _.reject($scope.allData, function(num) { return num.revision % _.random(0, 5) === 0; });
 
             if (!$scope.$$phase) {
                 $scope.$apply();

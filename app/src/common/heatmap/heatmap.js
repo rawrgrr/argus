@@ -5,12 +5,12 @@ angular.module('heatmap', [])
             link: function (scope, element, attrs) {
                 var cal = new CalHeatMap();
                 cal.init({
-                    domain: "week",
-                    subDomain: "hour",
+                    domain: "year",
+                    subDomain: "day",
                     data: "assets/datas-years.json",
                     start: new Date(2000, 0, 5),
-                    cellSize: 15,
-                    range: 2,
+                    cellSize: 16,
+                    range: 1,
                     domainGutter: 5,
                     previousSelector: "#example-g-PreviousDomain-selector",
                     nextSelector: "#example-g-NextDomain-selector",
