@@ -15,7 +15,7 @@
 angular.module('ArgusApp.home', [
         'ui.state',
         'titleService',
-        'plusOne'
+        'heatmap'
     ])
 
     /**
@@ -51,7 +51,5 @@ angular.module('ArgusApp.home', [
 
         $scope.gridOptions = {data: 'myData'};
 
-    })
-
-;
+    });
 

@@ -56,10 +56,13 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/ng-grid/ng-grid-2.0.7.min.js',
-      'vendor/d3/d3.min.js'
+      'vendor/d3/d3.min.js',
+      'vendor/cal-heatmap/cal-heatmap.min.js',
+      'vendor/cal-heatmap/cal-heatmap.source-map.js'
     ],
     css: [
-      'vendor/ng-grid/ng-grid.min.css'
+      'vendor/ng-grid/ng-grid.min.css',
+      'vendor/cal-heatmap/cal-heatmap.css'
     ]
   }
 };
